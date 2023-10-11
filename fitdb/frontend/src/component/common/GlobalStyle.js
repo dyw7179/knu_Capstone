@@ -3,9 +3,8 @@ import styled from 'styled-components';
 export const IndexContainer = styled.div`
     width: 1440px;
     margin: 0 auto;
-    padding-top: 30px;
+    padding-top: 20px;
     padding-bottom: 60px;
-    background-color: black;
     justify-content: center;
 
 `;
@@ -28,3 +27,4 @@ export const BasicButton = styled.button`
         border: 2px solid #4CAF50;
     }
 `;
+

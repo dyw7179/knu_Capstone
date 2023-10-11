@@ -5,13 +5,13 @@ import { NavLink } from 'react-router-dom';
 
 // 스타일 정의
 const HeaderWrapper = styled.header`
-  background-color: aqua;
   margin: 0 auto;  
+
 `;
 
 const HeaderElement = styled.div`
   width: 1440px;
-  height: 80px;
+  height: 65px;
   margin: 0 auto;
   background-color: #fff;
   align-items: center;
@@ -43,7 +43,7 @@ const Nav = styled.nav`
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 15px;
+    gap: 50px;
   }
 
   li {
@@ -95,6 +95,7 @@ const Header = () => {
         </ul>
       </Nav>
       </HeaderElement>
+      <hr/>
     </HeaderWrapper>
   );
 };
