@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import SearchLogo from '../../assets/img/Searchlogo.png'
+import SearchLogo from '../../assets/img/Searchlogo.png';
 
 export const MainContainer = styled.div`
     display: flex;

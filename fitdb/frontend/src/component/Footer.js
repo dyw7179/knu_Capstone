@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FooterContainer = styled.footer`
-  background-color: #fff;
+  background-color: #f8f8f8;
   margin: 0 auto;
 `;
 
@@ -21,20 +21,25 @@ const FooterElement = styled.div`
 const Logo = styled.div`
     width: 230px;
     height: 170px;
-    background-color: aqua;
+    display: flex;
     justify-content: center;
     align-items: center;
     color: #ADB5BD;
     font-family: ABeeZee;
-    font-size: 27.147px;
+    font-size: 35px;
     font-style: italic;
-    font-weight: 400;
+    font-weight: 900;
     line-height: normal;
 `;
 const FooterText = styled.p`
-  color: #555;
+  color: #8B95A1;
+  font-family: Pretendard;
   font-size: 14px;
-  
+  font-style: normal;
+  font-weight: 300;
+  line-height: 20px; /* 153.846% */
+  display: flex;
+  align-items: flex-start;
 `;
 
 function Footer() {
@@ -44,6 +49,7 @@ function Footer() {
             <Logo>FIT DB</Logo>
             <FooterText>
                 (주)FitDB
+                <br/>
                 주소 경기도 용인시 수지구 신봉1로 248번길 74-14
                 <br/>
                 사업자등록번호 8455-7179-991001 이메일 dyw7179@naver.com
