@@ -83,7 +83,7 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/page1/today" activeClassName="active">
+            <NavLink to="/fitsearch" activeClassName="active">
               FitSearch
             </NavLink>
           </li>

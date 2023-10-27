@@ -98,7 +98,7 @@ export const VideoSearchText = styled.p`
     line-height: 100%; /* 14px */
 `;
 
-export default function VideoSearchBox1() {
+export default function VideoSearchBox() {
     return (
         <VideoSearchContainer>
             <VideoSearchH1>

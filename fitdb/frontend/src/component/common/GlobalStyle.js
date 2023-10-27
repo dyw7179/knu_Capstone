@@ -9,6 +9,13 @@ export const IndexContainer = styled.div`
 
 `;
 
+export const MainContainer = styled.div`
+    display: flex;
+    flex-direction: column; 
+    background-color: #fff;
+`;
+
+
 export const BasicButton = styled.button`
     background-color: #4CAF50; /* Green */
     border: none;

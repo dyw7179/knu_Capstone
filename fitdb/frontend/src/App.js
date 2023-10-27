@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Main from './pages/Main/Main';
 import Header from './component/Header';
 import Footer from './component/Footer';
+import VideoSearch from './pages/VideoSearch/VideoSearch';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Main />} />
+        <Route path="/fitsearch" element={<VideoSearch />} />
       </Routes>
       <Footer />
     </Router>
