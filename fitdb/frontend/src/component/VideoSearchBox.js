@@ -1,7 +1,8 @@
 // VideoSearchComponent.js
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import SearchLogo from '../assets/img/Searchlogo.png';
+
 
 export const MainContainer = styled.div`
     display: flex;
@@ -98,13 +99,43 @@ export const VideoSearchText = styled.p`
     line-height: 100%; /* 14px */
 `;
 
+export const SearchIconContainer = styled.div`
+    cursor: pointer;
+    background: url('${SearchLogo}') no-repeat center;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+`;
+
 export default function VideoSearchBox() {
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const handleSearchRequest = () => {
+        console.log("Search requested for:", searchTerm);
+        // 이후 API 요청 등의 로직을 추가할 수 있습니다.
+    }
+
+
     return (
         <VideoSearchContainer>
             <VideoSearchH1>
                 FitSearch로 배우고 싶은 운동을 검색해보세요!
             </VideoSearchH1>
-            <VideoSearch></VideoSearch>
+            <div style={{position: 'relative', width: '650px'}}>
+                <VideoSearch 
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    onKeyPress={(e) => {
+                        if(e.key === 'Enter') {
+                            handleSearchRequest();
+                        }
+                    }}
+                />
+                <SearchIconContainer onClick={handleSearchRequest} />
+            </div>
             <VideoSearchTextBox>
                 <VideoSearchSpan>FitSearch</VideoSearchSpan>
                 <VideoSearchlogo>new</VideoSearchlogo>
