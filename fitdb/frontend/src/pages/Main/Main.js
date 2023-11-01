@@ -30,7 +30,7 @@ function Main() {
                         </FTcategory>
                     </FitTrendBox>
                     <FTSideBox>
-                        <FTSideBoxh1>운동 검색 순위</FTSideBoxh1>
+                        <FTSideBoxh1>AI스케줄러</FTSideBoxh1>
                     </FTSideBox>
                 </FitTrendArea>
                 <FitCommunityArea>

@@ -105,7 +105,7 @@ export const FitTrendArea = styled.div`
 `;
 
 export const FitTrendBox = styled.div`
-    width: 1060px;
+    width: 710px;
     height: 594px;
     flex-shrink: 0;
     border-radius: 16px;
@@ -115,7 +115,7 @@ export const FitTrendBox = styled.div`
 `;
 
 export const FTtopBox = styled.div`
-    width: 990px;
+    width: 640px;
     height: 80px;
     display: flex;
     justify-content: space-between;
@@ -198,7 +198,7 @@ export const FTcategoryBtn = styled.button`
 
 export const FTSideBox = styled.div`
     display: flex;
-    width: 350px;
+    width: 710px;
     height: 594px;
     margin-left: 25px;
     padding: 25px;

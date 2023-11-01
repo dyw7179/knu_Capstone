@@ -1,5 +1,7 @@
 // VideoSearchComponent.js
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import styled from 'styled-components';
 import SearchLogo from '../assets/img/Searchlogo.png';
 
@@ -109,16 +111,32 @@ export const SearchIconContainer = styled.div`
     top: 50%;
     transform: translateY(-50%);
 `;
-
-export default function VideoSearchBox() {
+export default function VideoSearchBox({ setVideoIds }) {
     const [searchTerm, setSearchTerm] = useState('');
+    const navigate = useNavigate();
 
-    const handleSearchRequest = () => {
+    const handleSearchRequest = async () => {
         console.log("Search requested for:", searchTerm);
-        // 이후 API 요청 등의 로직을 추가할 수 있습니다.
+        
+        // 메인 페이지에서 검색을 수행할 경우
+        if (!setVideoIds) {
+            // 검색 페이지로 이동하면서 검색어를 쿼리 스트링으로 전달
+            navigate(`/fitsearch?query=${searchTerm}`);
+            return;
+        }
+        
+        // 그 외의 경우 (예: 검색 페이지 내에서의 검색)
+        try {
+            const response = await axios.get('http://127.0.0.1:8000/video_search_app/search/', {
+                params: {
+                    query: searchTerm
+                }
+            });
+            setVideoIds(response.data.video_ids);
+        } catch (error) {
+            console.error('Search failed:', error);
+        }
     }
-
-
     return (
         <VideoSearchContainer>
             <VideoSearchH1>
@@ -141,6 +159,12 @@ export default function VideoSearchBox() {
                 <VideoSearchlogo>new</VideoSearchlogo>
                 <VideoSearchText>Youtube Data 기반으로 딱 맞는 영상을 추천해 드려요!</VideoSearchText>
             </VideoSearchTextBox>
+            {/* 검색 결과id값 테스트용 코드
+            <ul>
+                {searchResults.map(video_id => (
+                    <li key={video_id}>{video_id}</li>
+                ))}
+            </ul> */}
         </VideoSearchContainer>
     );
 }

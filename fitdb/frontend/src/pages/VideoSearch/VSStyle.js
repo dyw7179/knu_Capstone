@@ -38,3 +38,38 @@ export const VideoTitle = styled.div`
   text-align: center;
   margin-top: 10px;
 `;
+
+
+// 페이지 넘기기용 스타일
+export const PaginationWrapper = styled.div`
+    text-align: center;
+    margin: 20px 0;
+`;
+
+export const PaginationButton = styled.button`
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #eee;
+    cursor: pointer;
+    &:hover {
+        background-color: #ddd;
+    }
+`;
+
+
+// 모달창 켜는 버튼
+export const PlayButton = styled.button`
+position: absolute;
+top: 45%;
+left: 55%;
+transform: translate(-50%, -50%);
+font-size: 10em;
+background: none;
+border: none;
+cursor: pointer;
+opacity: 0.7;
+&:hover {
+    opacity: 1;
+}
+`;
