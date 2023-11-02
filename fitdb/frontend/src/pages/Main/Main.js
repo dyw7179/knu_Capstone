@@ -5,6 +5,7 @@ import { AISchedulerBox, AISh1, FCh1, FTPeriod, FTPeriodbtn, FTSideBox,
     FTSideBoxh1, FTcategory, FTcategoryBtn, FTh1, FTtopBox, 
     FitCommunityArea, FitCommunityBox, FitTrendArea, FitTrendBox, 
     MainContainer, } from './MainStyles';
+import Infl from '../../component/Infl';
 
 
 function Main() {
@@ -28,6 +29,7 @@ function Main() {
                             <FTcategoryBtn>필라테스/요가</FTcategoryBtn>
                             <FTcategoryBtn>크로스핏</FTcategoryBtn>
                         </FTcategory>
+                        <Infl>d</Infl>
                     </FitTrendBox>
                     <FTSideBox>
                         <FTSideBoxh1>AI스케줄러</FTSideBoxh1>
@@ -38,7 +40,7 @@ function Main() {
                         <FCh1>FitCommunity</FCh1>
                     </FitCommunityBox>
                     <AISchedulerBox>
-                        <AISh1>AI스케줄러</AISh1>
+                        <AISh1>광고</AISh1>
                     </AISchedulerBox>
                 </FitCommunityArea>
             </MainContainer>
