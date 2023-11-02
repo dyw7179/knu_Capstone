@@ -15,11 +15,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include 
-from django.views.generic import TemplateView#리액트 연동을 위해 추가
+from django.urls import path, include
+from django.views.generic import TemplateView  # 리액트 연동을 위해 추가
+from fitdb_app import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', TemplateView.as_view(template_name='index.html')),#리액트 연동을 위해 추가
-    path('video_search_app/', include('video_search_app.urls')), #영상추천앱
+    path('', TemplateView.as_view(template_name='index.html')),  # 리액트 연동을 위해 추가
+    path('video_search_app/', include('video_search_app.urls')),  # 영상추천앱
+    path('api/gpt', views.gpt_endpoint, name='gpt_endpoint'),
 ]

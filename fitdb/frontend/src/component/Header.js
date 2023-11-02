@@ -88,7 +88,7 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/page3" activeClassName="active">
+            <NavLink to="/ai" activeClassName="active">
               AI Scheduler
             </NavLink>
           </li>

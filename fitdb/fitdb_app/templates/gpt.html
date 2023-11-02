@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>추천 받은 항목</title>
+    <style>
+        #wrapper {
+            text-align: center;
+        }
+        #content {
+            margin: 20px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body id="wrapper">
+    <h1>FitDB Scheduler</h1>
+    <hr>
+    <div id="content">
+        <form action="/playlist">
+            {{ res|safe }}
+            <input type="text" name="playlist" placeholder="운동리스트 이름 설정">
+            <input type="submit" value="저장하기">
+        </form>
+    </div>
+</body>
+</html>
