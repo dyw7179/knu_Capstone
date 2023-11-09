@@ -5,6 +5,13 @@ from googleapiclient.errors import HttpError
 from googleapiclient.discovery import build
 import requests
 from transformers import AutoModelForSequenceClassification, AutoTokenizer, pipeline
+from concurrent.futures import ThreadPoolExecutor
+
+# 감성 분석 모델 및 파이프라인 초기화
+MODEL_NAME = "beomi/KcELECTRA-base"
+tokenizer = AutoTokenizer.from_pretrained("beomi/KcELECTRA-base")
+model = AutoModelForSequenceClassification.from_pretrained("beomi/KcELECTRA-base")
+sentiment_pipeline = pipeline("sentiment-analysis", model=model, tokenizer=tokenizer)
 
 
 class GetRelevantVideos(View):
@@ -12,17 +19,12 @@ class GetRelevantVideos(View):
     def get(self, request, *args, **kwargs):
 
         # YouTube API에 필요한 정보와 설정
-        DEVELOPER_KEY = "AIzaSyBEKVaHpIt3Ozns7EFeG131aTKhrMF393g"
+        DEVELOPER_KEY = "AIzaSyBJmSA5E6_5Cb3j9eaUJc444ePEeQtzNEs"
         YOUTUBE_API_SERVICE_NAME = "youtube"
         YOUTUBE_API_VERSION = "v3"
 
         query = request.GET.get('query', '벤치프레스')  # 기본값은 '벤치프레스'
 
-        # 감성 분석 모델 및 파이프라인 초기화
-        MODEL_NAME = "beomi/KcELECTRA-base"
-        tokenizer = AutoTokenizer.from_pretrained("beomi/KcELECTRA-base")
-        model = AutoModelForSequenceClassification.from_pretrained("beomi/KcELECTRA-base")
-        sentiment_pipeline = pipeline("sentiment-analysis", model=model, tokenizer=tokenizer)
 
         youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION, developerKey=DEVELOPER_KEY)
 
@@ -105,7 +107,7 @@ class GetRelevantVideos(View):
                 print(f"An error occurred: {e}")
                 comments = []
 
-            sorted_comments = sorted(comments, key=lambda x: x[1], reverse=True)[:10]
+            sorted_comments = sorted(comments, key=lambda x: x[1], reverse=True)[:2]
             average_positive_score = analyze_sentiment(sorted_comments)
 
             video_info = {

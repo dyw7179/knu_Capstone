@@ -22,4 +22,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('', TemplateView.as_view(template_name='index.html')),#리액트 연동을 위해 추가
     path('video_search_app/', include('video_search_app.urls')), #영상추천앱
+     path('infl_app/', include('infl_app.urls')),
 ]

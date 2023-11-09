@@ -6,7 +6,7 @@ import { AISchedulerBox, AISh1, FCh1, FTPeriod, FTPeriodbtn, FTSideBox,
     FitCommunityArea, FitCommunityBox, FitTrendArea, FitTrendBox, 
     MainContainer, } from './MainStyles';
 import Infl from '../../component/Infl';
-
+import TopInfluencers from '../../component/infl_test';
 
 function Main() {
     return (
@@ -33,6 +33,7 @@ function Main() {
                     </FitTrendBox>
                     <FTSideBox>
                         <FTSideBoxh1>AI스케줄러</FTSideBoxh1>
+                        <TopInfluencers>인플추천</TopInfluencers>
                     </FTSideBox>
                 </FitTrendArea>
                 <FitCommunityArea>
