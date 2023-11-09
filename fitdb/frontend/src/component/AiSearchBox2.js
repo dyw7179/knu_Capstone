@@ -12,14 +12,17 @@ export const MainContainer = styled.div`
 
 
 export const AiSearchContainer = styled.div`
-    width: 1440px;
+    width: calc(80% - 50px); /* Adjust the padding and margin values */
     height: 247px;
     flex-shrink: 0;
     border-radius: 16px;
-    background: linear-gradient(266deg, rgba(50, 205, 50, 0.80) 5.59%, rgba(255, 105, 180, 0.80) 95.39%);    display: flex;
+    background: linear-gradient(266deg, rgba(50, 205, 50, 0.80) 5.59%, rgba(255, 105, 180, 0.80) 95.39%);
+    display: flex;
     flex-direction: column; 
     justify-content: center;
     align-items: center;
+    margin-right: 40px;
+    padding: 25px;
 `;
 
 export const AiSearchH1 = styled.h1`
@@ -34,42 +37,42 @@ export const AiSearchH1 = styled.h1`
 export const AiSearch = styled.input.attrs({
     placeholder: "오늘 가슴 운동했어",
     type: "text"
-  })`
-    width: 650px;
+})`
+    width: calc(80% - 50px);
     height: 54px;
     flex-shrink: 0;
     border-radius: 20px;
     border: 1px solid #DADFE8;
-    background: #FFF url('${SearchLogo}') no-repeat 610px center;
-    padding-left: 20px; // 이미지 너비에 따라 조절해 주세요.
+    background: #FFF url('${SearchLogo}') no-repeat 80% center; /* Updated position */
+    padding-left: 20px;
     font-size: 16px;
     color: #555;
     ::placeholder {
-      color: #bbb;
-      opacity: 1;
+        color: #bbb;
+        opacity: 1;
     }
     :-ms-input-placeholder { /* Internet Explorer 10-11 */
-      color: #bbb;
+        color: #bbb;
     }
     ::-ms-input-placeholder { /* Microsoft Edge */
-      color: #bbb;
+        color: #bbb;
     }
-  `;
+`;
 
 export const AiSearchTextBox = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 650px;
-    
-`; 
+    width: calc(80% - 50px); /* Adjust the value based on your layout */
+`;
+
 export const AiSearchSpan = styled.span`
     color: #FFF;
     font-family: Pretendard;
     font-size: 18px;
     font-style: normal;
     font-weight: 600;
-    line-height: 100%; /* 18px */
+    line-height: 100%;
     margin-right: 10px;
 `;
 
@@ -85,7 +88,7 @@ export const AiSearchlogo = styled.div`
     font-size: 12px;
     font-style: normal;
     font-weight: 700;
-    line-height: 18px; /* 150% */
+    line-height: 18px;
 `;
 
 export const AiSearchText = styled.p`
@@ -95,13 +98,13 @@ export const AiSearchText = styled.p`
     font-style: normal;
     font-weight: 600;
     margin-left: 15px;
-    line-height: 100%; /* 14px */
+    line-height: 100%;
 `;
 
 export const SearchIconContainer = styled.div`
     cursor: pointer;
-    background: url('${SearchLogo}') no-repeat center;
-    width: 30px;
+    // background: url('${SearchLogo}') no-repeat 80% center; /* Updated position */
+    width: calc(80% - 50px);
     height: 30px;
     position: absolute;
     right: 15px;
@@ -158,7 +161,7 @@ export default function AiSearchBox() {
                 <AiSearchH1>
                     AiSearch로 다음날 운동 부위를 추천받아보세요!
                 </AiSearchH1>
-                <div style={{ position: 'relative', width: '650px' }}>
+                <div style={{ position: 'relative', width: '80%', maxWidth: '650px' }}>
                     <AiSearch
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
