@@ -1,0 +1,18 @@
+.dssd {
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+    
+    justify-content: flex-start;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: aqua;
+
+
+    box-sizing: border-box;
+
+} 
