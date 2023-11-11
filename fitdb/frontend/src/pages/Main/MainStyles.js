@@ -105,9 +105,8 @@ export const FitTrendArea = styled.div`
 `;
 
 export const FitTrendBox = styled.div`
-    width: 710px;
+    width: 890px;
     height: 594px;
-    flex-shrink: 0;
     border-radius: 16px;
     border: 8px solid #F0F6F9;
     box-sizing: border-box;

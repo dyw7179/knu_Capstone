@@ -5,6 +5,7 @@ from django.db.utils import IntegrityError
 from infl_app.models import Influencer
 import googleapiclient.discovery
 import googleapiclient.errors
+from datetime import datetime
 
 class Command(BaseCommand):
     help = 'Collects influencers data from YouTube API'
@@ -54,6 +55,10 @@ class Command(BaseCommand):
                         total_videos = int(statistics.get("videoCount", 0))
                         average_views = total_views / total_videos if total_videos else 0
 
+                        # 채널 생성일 변환
+                        channel_created_at_raw = snippet["publishedAt"]
+                        channel_created_at = datetime.strptime(channel_created_at_raw, "%Y-%m-%dT%H:%M:%SZ").date()
+
                         # 모델 인스턴스를 생성하고 데이터를 저장
                         try:
                             Influencer.objects.create(
@@ -62,8 +67,9 @@ class Command(BaseCommand):
                                 description=description,
                                 profile_image_url=profile_image_url,
                                 subscribers=subscribers,
-                                views=total_views,  # 필드 이름을 views로 수정
+                                views=total_views,
                                 average_views=average_views,
+                                channel_created_at=channel_created_at,  # 채널 생성일 저장
                             )
                             self.stdout.write(self.style.SUCCESS(f'Successfully added channel "{title}"'))
                         except IntegrityError:

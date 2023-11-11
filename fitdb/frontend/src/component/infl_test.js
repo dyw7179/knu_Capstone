@@ -7,7 +7,8 @@ const TopInfluencers = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('/top/');
+        // '/'를 URL의 시작에 추가하여 절대 경로를 지정합니다.
+        const response = await axios.get('http://localhost:8000/infl_app/top/');
         setInfluencers(response.data);
       } catch (error) {
         console.error('Error fetching data: ', error);

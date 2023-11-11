@@ -69,31 +69,33 @@ const Nav = styled.nav`
 `;
 
 
-// 컴포넌트 정의
 const Header = () => {
+  // NavLink의 className에 함수를 전달하여 활성화 상태에 따라 클래스 이름을 결정합니다.
+  const getNavLinkClass = ({ isActive }) => isActive ? 'active' : '';
+
   return (
     <HeaderWrapper>
       <HeaderElement>
         <Logo>FitDB</Logo>
         <Nav>
-        <ul>
-          <li>
-            <NavLink exact to="/" activeClassName="active">
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/fitsearch" activeClassName="active">
-              FitSearch
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/page3" activeClassName="active">
-              AI Scheduler
-            </NavLink>
-          </li>
-        </ul>
-      </Nav>
+          <ul>
+            <li>
+              <NavLink className={getNavLinkClass} to="/">
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className={getNavLinkClass} to="/fitsearch">
+                FitSearch
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className={getNavLinkClass} to="/page3">
+                AI Scheduler
+              </NavLink>
+            </li>
+          </ul>
+        </Nav>
       </HeaderElement>
       <hr/>
     </HeaderWrapper>
