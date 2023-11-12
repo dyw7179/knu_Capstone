@@ -19,7 +19,7 @@ class GetRelevantVideos(View):
     def get(self, request, *args, **kwargs):
 
         # YouTube API에 필요한 정보와 설정
-        DEVELOPER_KEY = "AIzaSyBJmSA5E6_5Cb3j9eaUJc444ePEeQtzNEs"
+        DEVELOPER_KEY = "AIzaSyBEKVaHpIt3Ozns7EFeG131aTKhrMF393g"
         YOUTUBE_API_SERVICE_NAME = "youtube"
         YOUTUBE_API_VERSION = "v3"
 

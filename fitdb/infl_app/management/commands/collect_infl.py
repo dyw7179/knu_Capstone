@@ -11,7 +11,11 @@ class Command(BaseCommand):
     help = 'Collects influencers data from YouTube API'
 
     def handle(self, *args, **options):
-        API_KEY = "AIzaSyBJmSA5E6_5Cb3j9eaUJc444ePEeQtzNEs"  # Replace with your actual API key
+        
+        Influencer.objects.all().delete()
+        self.stdout.write(self.style.SUCCESS('All existing data has been deleted.'))
+
+        API_KEY = "AIzaSyBEKVaHpIt3Ozns7EFeG131aTKhrMF393g"  # Replace with your actual API key
         YOUTUBE_API_SERVICE_NAME = "youtube"
         YOUTUBE_API_VERSION = "v3"
 
@@ -19,7 +23,9 @@ class Command(BaseCommand):
             YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION, developerKey=API_KEY
         )
 
-        search_keywords = ["보디빌딩", "스쿼트", "벤치프레스", "아놀드 프레스", "벤트오버레터럴레이즈"]
+        search_keywords = ["보디빌딩", "스쿼트", "벤치프레스","헬창의", "아놀드 프레스", "벤트오버레터럴레이즈","데드리프트","파워리프팅", "피지컬", "핏블리",
+                   "숄더패킹", "바벨로우", "랫풀다운", "덤벨프레스", "벌크업", "상완골전방활주",]
+
 
         unique_channels = set()
 
@@ -57,9 +63,13 @@ class Command(BaseCommand):
 
                         # 채널 생성일 변환
                         channel_created_at_raw = snippet["publishedAt"]
-                        channel_created_at = datetime.strptime(channel_created_at_raw, "%Y-%m-%dT%H:%M:%SZ").date()
+                        # 밀리초가 포함되어 있는지 확인
+                        if '.' in channel_created_at_raw:
+                            format_str = "%Y-%m-%dT%H:%M:%S.%fZ"
+                        else:
+                            format_str = "%Y-%m-%dT%H:%M:%SZ"
 
-                        # 모델 인스턴스를 생성하고 데이터를 저장
+                        channel_created_at = datetime.strptime(channel_created_at_raw, format_str).date()                        # 모델 인스턴스를 생성하고 데이터를 저장
                         try:
                             Influencer.objects.create(
                                 channel_id=channel_id,

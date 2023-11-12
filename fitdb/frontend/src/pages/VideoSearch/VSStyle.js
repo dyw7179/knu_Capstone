@@ -57,19 +57,18 @@ export const PaginationButton = styled.button`
     }
 `;
 
-
 // 모달창 켜는 버튼
 export const PlayButton = styled.button`
 position: absolute;
 top: 45%;
 left: 55%;
 transform: translate(-50%, -50%);
-font-size: 10em;
+font-size: 100em;
 background: none;
 border: none;
 cursor: pointer;
-opacity: 0.7;
+opacity: 0;
 &:hover {
-    opacity: 1;
+    opacity: 0;
 }
 `;

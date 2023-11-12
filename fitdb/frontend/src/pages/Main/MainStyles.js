@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import SearchLogo from '../../assets/img/Searchlogo.png';
+import Fit500logo from '../../assets/img/fit500img.png';
+import Adimg from '../../assets/img/adimg.png';
 
 export const MainContainer = styled.div`
     display: flex;
@@ -109,6 +111,7 @@ export const FitTrendBox = styled.div`
     height: 594px;
     border-radius: 16px;
     border: 8px solid #F0F6F9;
+    //background: linear-gradient(to bottom right, rgba(12, 123, 235, 0.60) 5.59%, rgba(113, 9, 204, 0.60) 95.39%);
     box-sizing: border-box;
     padding: 25px;
 `;
@@ -126,6 +129,20 @@ export const FTh1 = styled.h1`
     height: 50px;
     font-family: Pretendard;
     font-size: 27.147px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background: linear-gradient(277deg, #0C7BEB 0.26%, #4B34D8 62.22%, #7109CC 99.73%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+`;
+export const FTh2 = styled.h2`
+    margin-left: -15px;
+    width: 520px;
+    height: 50px;
+    font-family: Pretendard;
+    font-size: 22px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -227,51 +244,79 @@ export const FitCommunityArea = styled.div`
     width: 1440px;
     display: flex;
     justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
     margin-top: 30px;
 `;
 
-export const FitCommunityBox = styled.div`
-    display: flex;
-    width: 900px;
-    height: 402px;
+export const AdBox = styled.div`
+    width: 1440px;
+    height: 130px;
+    flex-shrink: 0;
     border-radius: 16px;
-    border: 8px solid #F0F6F9;
+    border: 3px solid #F0F6F9;
+    background: url('${Adimg}') lightgray 50% / cover no-repeat;
     box-sizing: border-box;
-    padding: 25px;
+    margin-top: 50px;
 `;
 
-export const FCh1 = styled.h1`
+export const NewsnsBox = styled.div`
+    width: 1440px;
+    height: 175px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin-top: 5px;
+`;
+export const FitNews = styled.div`
+    width: 660px;
+    height: 170px;
+    border-radius: 16px;
+    background-color: ${props => props.bgColor || '#3EB2D7'};
+    background-image: url(${props => props.bgImage});    
+    background-repeat: no-repeat;
+    background-position: calc(100% - 30px) center;
+    background-size: 130px 130px;
+    padding: 20px;
+`;
+
+export const FitNewsTextBox = styled.div`
+    display: felx;
+    flex-direction: column;
+    margin-left: 10px;
+`;
+
+export const FitNewsText = styled.h2`
+    margin-top: 30px;
+    color: var(--white, #FFF);
     font-family: Pretendard;
-    font-size: 27.147px;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+`;
+
+export const FitNewsTextSpan = styled.h1`
+    margin-top: 25px;
+    color: var(--white, #FFF);
+    font-family: Pretendard;
+    font-size: 40px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    background: linear-gradient(277deg, #0C7BEB 0.26%, #4B34D8 62.22%, #7109CC 99.73%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 `;
 
-
-
-export const AISchedulerBox = styled.div`
-width: 500px;
-height: 402px;
-border-radius: 16px;
-border: 8px solid #F0F6F9;
-box-sizing: border-box;
-padding: 25px;
-`;
-
-export const AISh1 = styled.h1`
-    width: 190px;
-    font-family: Pretendard;
-    font-size: 27.147px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    background: linear-gradient(277deg, #0C7BEB 0.26%, #4B34D8 62.22%, #7109CC 99.73%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+export const Fit500 = styled.div`
+    margin-top: 20px;
+    width: 1440px;
+    height: 180px;
+    border-radius: 16px;
+    background: #3EB2D7;
+    box-sizing: border-box;
+    padding: 0 20px;
+    background-image: url('${Fit500logo}');    
+    background-repeat: no-repeat;
+    background-position: calc(100% - 50px) center;
+    background-size: 140px 140px;
 `;

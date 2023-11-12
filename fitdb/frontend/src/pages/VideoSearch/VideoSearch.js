@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { IndexContainer, MainContainer } from '../../component/common/GlobalStyle';
-import { VideoGrid, VideoWrapper, VideoTitle, PaginationWrapper, 
+import { VideoGrid, VideoWrapper, VideoTitle, PaginationWrapper,
     PaginationButton, PlayButton } from '../VideoSearch/VSStyle';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
@@ -72,11 +72,14 @@ function VideoSearch() {
                         // 비디오를 클릭하면 모달이 열리도록 onClick 핸들러 추가
                         <VideoWrapper key={id}>
                         <iframe
-                            title={`Video ${index + 1}`}
-                            src={`https://www.youtube.com/embed/${id}`}
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
+                        title={`Video ${index + 1}`}
+                        src={`https://www.youtube.com/embed/${id}`}
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        style={{
+                            borderRadius: '8px' // 둥근 모서리, 반지름 10px
+                        }}
                         ></iframe>
                         <PlayButton onClick={() => {
                             setSelectedVideoId(id);
