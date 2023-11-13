@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-import os #리액트 연동을 위해 추가
+import os  # 리액트 연동을 위해 추가
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-o(mbk6v+$u4#&^z0c$%5lr9ut6h+us+@4ncl+pnvmvf&j0(r@e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['13.239.65.199', '13.239.65.199:8000']
 
 
 # Application definition
@@ -67,7 +67,7 @@ ROOT_URLCONF = "fitdb.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, "frontend/build")],#리액트 연동을 위해 추가
+        "DIRS": [os.path.join(BASE_DIR, "frontend/build")],  # 리액트 연동을 위해 추가
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -130,7 +130,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
-STATICFILES_DIRS = [#리액트 연동을 위해 추가
+STATICFILES_DIRS = [  # 리액트 연동을 위해 추가
     os.path.join(BASE_DIR, "frontend/build/static"),
 ]
 
