@@ -10,6 +10,7 @@ import { AdBox, FTSideBox,
 import Infl from '../../component/Infl';
 import fitNewsImage from '../../assets/img/fitnews.png';
 import instalogo from '../../assets/img/instalogo.svg';
+import AiSearchBox2 from '../../component/AiSearchBox2';
 
 function Main() {
     return (
@@ -26,6 +27,7 @@ function Main() {
                     </FitTrendBox>
                     <FTSideBox>
                         <FTSideBoxh1>AI스케줄러</FTSideBoxh1>
+                        <AiSearchBox2/>
                     </FTSideBox>
                 </FitTrendArea>
                 <FitCommunityArea>

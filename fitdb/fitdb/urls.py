@@ -17,10 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include 
 from django.views.generic import TemplateView#리액트 연동을 위해 추가
+from ai_app import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', TemplateView.as_view(template_name='index.html')),#리액트 연동을 위해 추가
     path('video_search_app/', include('video_search_app.urls')), #영상추천앱
-     path('infl_app/', include('infl_app.urls')),
+    path('infl_app/', include('infl_app.urls')),
+    path('api/gpt', views.gpt_endpoint, name='gpt_endpoint'),
 ]
