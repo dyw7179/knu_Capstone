@@ -12,7 +12,7 @@ export const MainContainer = styled.div`
 
 
 export const AiSearchContainer = styled.div`
-    width: calc(80% - 50px); /* Adjust the padding and margin values */
+    width: calc(90% - 0px); /* Adjust the padding and margin values */
     height: 247px;
     flex-shrink: 0;
     border-radius: 16px;

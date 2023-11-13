@@ -90,7 +90,7 @@ const Header = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink className={getNavLinkClass} to="/page3">
+              <NavLink className={getNavLinkClass} to="/ai">
                 AI Scheduler
               </NavLink>
             </li>
