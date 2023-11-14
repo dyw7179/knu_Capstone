@@ -11,7 +11,15 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os  # 리액트 연동을 위해 추가
 from pathlib import Path
+import openai
+from dotenv import load_dotenv
 
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Set your OpenAI API key
+openai.api_key = os.getenv("OPENAI_API_KEY")
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +33,7 @@ SECRET_KEY = "django-insecure-o(mbk6v+$u4#&^z0c$%5lr9ut6h+us+@4ncl+pnvmvf&j0(r@e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['13.239.65.199', '13.239.65.199:8000']
+ALLOWED_HOSTS = []
 
 
 # Application definition
