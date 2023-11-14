@@ -8,8 +8,8 @@ from django.views.decorators.csrf import csrf_exempt
 import openai
 import glob
 import json
-
-openai.api_key = ""
+import os
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 messages = []
 
